@@ -24,7 +24,7 @@
                                 <div class="absolute w-16 h-10 flex items-center justify-end fill-current text-gray-300">
                                     <x-svg.email/>
                                 </div>
-                                <x-jet-input id="email" placeholder="Email Address" onfocus="this.placeholder=''" onblur="this.placeholder = 'Email Address '" class="w-full" type="email" name="email" :value="old('email')" required autofocus />
+                                <x-jet-input id="email" placeholder="Email Address" onfocus="this.placeholder=''" onblur="this.placeholder = 'Email Address '" class="w-full" type="email" name="email" :value="old('email')" required />
                                 
                             </div>
                         </div>

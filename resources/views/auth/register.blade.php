@@ -1,11 +1,10 @@
 <x-guest-layout>
+    
     <x-jet-authentication-card>
         <x-slot name="logo">
             <div class="w-60 h-60 lg:w-full lg:max-w-lg lg:h-auto"><x-svg.logo/></div>
         </x-slot>
-
-        <x-jet-validation-errors class="mb-4" />
-
+        
         @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
                 {{ session('status') }}
@@ -43,7 +42,7 @@
                                 <div class="absolute w-16 h-10 flex items-center justify-end fill-current text-gray-300">
                                     <x-svg.user/>
                                 </div>
-                                <x-jet-input id="user_name" placeholder="User Name" onfocus="this.placeholder=''" onblur="this.placeholder = 'User Name '" class="w-full" type="text" name="user_name" :value="old('user_name')" required autofocus autocomplete="user_name"/>
+                                <x-jet-input id="user_name" placeholder="User Name" onfocus="this.placeholder=''" onblur="this.placeholder = 'User Name '" class="w-full" type="text" name="user_name" :value="old('user_name')" required autocomplete="user_name"/>
                             </div>
                         </div>
 
@@ -57,11 +56,16 @@
                         </div>
 
                         <div class="flex px-4 w-full mt-2 items-center justify-center">
-                            <div class="h-10 w-full max-w-md relative">
+                            <div class="h-auto w-full max-w-md relative">
                                 <div class="absolute w-16 h-10 flex items-center justify-end fill-current text-gray-300">
                                     <x-svg.password/>
                                 </div>
-                                <x-jet-input id="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder = 'Password '" class="flex text-center h-10 bg-white border rounded-full font-ibm w-full" type="password" name="password" required autocomplete="current-password" />
+                                @if($errors->has('password'))
+                                    <input  placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder = 'Password '" class="flex text-center h-10 bg-white border-red-600 border-2 rounded-full font-ibm w-full" type="password" name="password" required/>
+                                    <span class=" text-red-600">{{ $errors->first('password') }}</span>
+                                @else
+                                    <x-jet-input id="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder = 'Password '" class="flex text-center h-10 bg-white border rounded-full font-ibm w-full" type="password" name="password" required autocomplete="current-password" />
+                                @endif
                             </div>
                         </div>
 

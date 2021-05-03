@@ -4,8 +4,6 @@
             <div class="w-60 h-60 lg:w-full lg:max-w-lg lg:h-auto"><x-svg.logo/></div>
         </x-slot>
 
-        <x-jet-validation-errors class="mb-4" />
-
         @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
                 {{ session('status') }}
@@ -22,14 +20,14 @@
                         </div>
                         <div class="flex justify-center items-center mt-6 w-full px-4">
                             <div class="flex h-10 w-full max-w-md">
-                                <button class=" flex justify-center items-center h-10 w-1/2 bg-facebook rounded-full text-white font-ibm mr-2 "><x-svg.facebook/>Facebook</button>
-                                <button class=" flex justify-center items-center h-10 w-1/2 bg-hijaugoogle rounded-full text-white font-ibm ml-2"><x-svg.google/>Google</button>
+                                <a href="#"class=" flex justify-center items-center h-10 w-1/2 bg-facebook rounded-full text-white font-ibm mr-2 "><x-svg.facebook/>Facebook</a>
+                                <a href="#" class=" flex justify-center items-center h-10 w-1/2 bg-hijaugoogle rounded-full text-white font-ibm ml-2"><x-svg.google/>Google</a>
                             </div>
                         </div>
                         <div class="flex justify-center items-center mt-2 w-full px-4">
                             <div class="flex h-10 w-full max-w-md">
-                                <button class=" flex justify-center items-center h-10 w-1/2 bg-black rounded-full text-white font-ibm mr-2"><x-svg.apple/>Apple</button>
-                                <button class=" flex justify-center items-center h-10 w-1/2 bg-outlook rounded-full text-white font-ibm ml-2"><x-svg.outlook/>Outlook</button>
+                                <a href="#" class=" flex justify-center items-center h-10 w-1/2 bg-black rounded-full text-white font-ibm mr-2"><x-svg.apple/>Apple</a>
+                                <a href="#" class=" flex justify-center items-center h-10 w-1/2 bg-outlook rounded-full text-white font-ibm ml-2"><x-svg.outlook/>Outlook</a>
                             </div>
                         </div>
                         <div class="flex items-center justify-center w-full px-4 h-6 mt-2">
@@ -43,7 +41,7 @@
                                 <div class="absolute w-16 h-10 flex items-center justify-end fill-current text-gray-300">
                                     <x-svg.email/>
                                 </div>
-                                <x-jet-input id="email" placeholder="Email Address" onfocus="this.placeholder=''" onblur="this.placeholder = 'Email Address '" class="w-full" type="email" name="email" :value="old('email')" required autofocus />
+                                <x-jet-input id="email" placeholder="Email Address" onfocus="this.placeholder=''" onblur="this.placeholder = 'Email Address '" class="w-full" type="email" name="email" :value="old('email')" required />
                                 
                             </div>
                         </div>
@@ -55,6 +53,9 @@
                                 </div>
                                 <x-jet-input id="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder = 'Password '" class="flex text-center h-10 bg-white border rounded-full font-ibm w-full" type="password" name="password" required autocomplete="current-password" />
                             </div>
+                        </div>
+                        <div class="flex px-4 sm:px-8 w-full mt-4">
+                            <x-jet-validation-errors class="mb-4" />
                         </div>
                         <div class="">
                             <label class="flex px-4 w-full mt-2 items-center justify-center">
