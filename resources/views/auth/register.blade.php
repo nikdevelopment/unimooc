@@ -22,7 +22,7 @@
                         <div class="flex justify-center items-center mt-6 w-full px-4">
                             <div class="flex h-10 w-full max-w-md">
                                 <button class=" flex justify-center items-center h-10 w-1/2 bg-facebook rounded-full text-white font-ibm mr-2 "><x-svg.facebook/>Facebook</button>
-                                <button class=" flex justify-center items-center h-10 w-1/2 bg-hijaugoogle rounded-full text-white font-ibm ml-2"><x-svg.google/>Google</button>
+                                <a href="/auth/google/redirect" class=" flex justify-center items-center h-10 w-1/2 bg-hijaugoogle rounded-full text-white font-ibm ml-2"><x-svg.google/>Google</a>
                             </div>
                         </div>
                         <div class="flex justify-center items-center mt-2 w-full px-4">
@@ -42,7 +42,7 @@
                                 <div class="absolute w-16 h-10 flex items-center justify-end fill-current text-gray-300">
                                     <x-svg.user/>
                                 </div>
-                                <x-jet-input id="user_name" placeholder="User Name" onfocus="this.placeholder=''" onblur="this.placeholder = 'User Name '" class="w-full" type="text" name="user_name" :value="old('user_name')" required autocomplete="user_name"/>
+                                <x-jet-input id="username" placeholder="User Name" onfocus="this.placeholder=''" onblur="this.placeholder = 'User Name '" class="w-full" type="text" name="username" :value="old('username')" required autocomplete="username"/>
                             </div>
                         </div>
 
@@ -79,9 +79,9 @@
                         </div>
                         
                         @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                            <div class="mt-4">
+                            <div class="flex items-center justify-center mt-4 w-full">
                                 <x-jet-label for="terms">
-                                    <div class="flex items-center">
+                                    <div class="flex items-center w-full max-w-md">
                                         <x-jet-checkbox name="terms" id="terms"/>
 
                                         <div class="ml-2">
