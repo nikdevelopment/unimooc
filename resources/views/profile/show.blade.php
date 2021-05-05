@@ -12,11 +12,13 @@
 
                 <x-jet-section-border />
             @endif
-
+            @$user = Auth::user();
             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
+                @if($user->socialiteid == null)
                 <div class="mt-10 sm:mt-0">
                     @livewire('profile.update-password-form')
                 </div>
+                @endif
 
                 <x-jet-section-border />
             @endif

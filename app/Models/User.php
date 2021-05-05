@@ -9,6 +9,9 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Laravel\Jetstream\Features;
 
 class User extends Authenticatable
 {
@@ -24,7 +27,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'user_name',
+        'name',
+        'username',
         'email',
         'password',
     ];
@@ -58,4 +62,32 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function getProfilePhotoUrlAttribute()
+    {
+        $path = $this->profile_photo_path;
+
+        if (Storage::disk($this->profilePhotoDisk())->exists($path)){
+            return Storage::disk($this->profilePhotoDisk())->url($this->profile_photo_path);
+        } 
+        elseif (!empty($path)){
+            // Use Photo URL from Social sites link... 
+            return $path;
+        }
+        else {
+            //empty path. Use defaultProfilePhotoUrl
+            return $this->defaultProfilePhotoUrl();
+        }
+    }
+    
+
+    /**
+     * Get the default profile photo URL if no profile photo has been uploaded.
+     *
+     * @return string
+     */
+    protected function defaultProfilePhotoUrl()
+    {
+        return 'https://i.stack.imgur.com/l60Hf.png';
+    }
 }
