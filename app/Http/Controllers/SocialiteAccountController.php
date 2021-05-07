@@ -23,7 +23,7 @@ class SocialiteAccountController extends Controller
         if ($provider == "microsoft")
         {
             return Socialite::driver('microsoft')
-                ->scopes(['user.read', 'profile'])
+                ->scopes('user.read')
                 ->redirect();
         }
         else
