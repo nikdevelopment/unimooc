@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
-use App\Http\Controllers\SocialiteController;
+use App\Http\Controllers\SocialiteAccountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +23,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/auth/google/redirect', [SocialiteController::class, 'redirectGoogle']);
+Route::get('/auth/redirect/{provider}', [SocialiteAccountController::class, 'handleAuthRedirect']);
+Route::get('/auth/callback/{provider}', [SocialiteAccountController::class, 'handleAuthCallback']);
 
-Route::get('/auth/google/callback', [SocialiteController::class, 'handleGoogleCallback']);
-
-Route::post('/auth/socialite/register', [SocialiteController::class, 'createSocialiteUser']);
+Route::post('/auth/socialite/register', [SocialiteAccountController::class, 'createSocialiteUser']);

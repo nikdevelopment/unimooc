@@ -19,16 +19,17 @@
                             <div class="flex w-72 h-14 justify-center items-center text-3xl  rounded-besar rounded-tl-besar  text-oren font-tulisan">SIGN UP</div>
                             <a href="{{ route('login') }}" class="flex w-72 h-14 bg-gray-200 dark:bg-grey-light justify-center items-center text-3xl  text-teal cursor-pointer rounded-tr-besar font-tulisan">SIGN IN</a>
                         </div>
+                        
                         <div class="flex justify-center items-center mt-6 w-full px-4">
                             <div class="flex h-10 w-full max-w-md">
-                                <button class=" flex justify-center items-center h-10 w-1/2 bg-facebook rounded-full text-white font-ibm mr-2 "><x-svg.facebook/>Facebook</button>
-                                <a href="/auth/google/redirect" class=" flex justify-center items-center h-10 w-1/2 bg-hijaugoogle rounded-full text-white font-ibm ml-2"><x-svg.google/>Google</a>
+                                <a href="/auth/redirect/facebook" class=" flex justify-center items-center h-10 w-1/2 bg-facebook rounded-full text-white font-ibm mr-2 "><x-svg.facebook/>Facebook</a>
+                                <a href="/auth/redirect/google" class=" flex justify-center items-center h-10 w-1/2 bg-hijaugoogle rounded-full text-white font-ibm ml-2"><x-svg.google/>Google</a>
                             </div>
                         </div>
                         <div class="flex justify-center items-center mt-2 w-full px-4">
                             <div class="flex h-10 w-full max-w-md">
-                                <button class=" flex justify-center items-center h-10 w-1/2 bg-black rounded-full text-white font-ibm mr-2"><x-svg.apple/>Apple</button>
-                                <button class=" flex justify-center items-center h-10 w-1/2 bg-outlook rounded-full text-white font-ibm ml-2"><x-svg.outlook/>Outlook</button>
+                                <a href="/auth/redirect/apple" class=" flex justify-center items-center h-10 w-1/2 bg-black rounded-full text-white font-ibm mr-2"><x-svg.apple/>Apple</a>
+                                <a href="/auth/redirect/microsoft" class=" flex justify-center items-center h-10 w-1/2 bg-outlook rounded-full text-white font-ibm ml-2"><x-svg.outlook/>Outlook</a>
                             </div>
                         </div>
                         <div class="flex items-center justify-center w-full px-4 h-6 mt-2">

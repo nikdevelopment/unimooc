@@ -43,6 +43,7 @@
                         <input type="hidden" name="id" value="{{ $user->id }}">
                         <input type="hidden" name="token" value="{{ $user->token }}">
                         <input type="hidden" name="avatar" value="{{ $user->avatar }}">
+                        <input type="hidden" name="provider" value="{{ $provider }}">
                         <div class="flex px-4 sm:px-8 w-full mt-4">
                             <x-jet-validation-errors class="mb-4" />
                         </div>

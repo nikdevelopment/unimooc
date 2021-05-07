@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae996ff96c6bce5ce137ee11fba452da",
+    "content-hash": "ad47de361767a2bf2c7825c49caccf31",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3142,6 +3142,47 @@
             "time": "2020-08-18T17:17:46+00:00"
         },
         {
+            "name": "socialiteproviders/facebook",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/Facebook.git",
+                "reference": "9b94a9334b5d0f61de8f5a20928d63d4d8f4e00d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/Facebook/zipball/9b94a9334b5d0f61de8f5a20928d63d4d8f4e00d",
+                "reference": "9b94a9334b5d0f61de8f5a20928d63d4d8f4e00d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.2 || ^8.0",
+                "socialiteproviders/manager": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\Facebook\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oleksandr Prypkhan (Alex Wells)",
+                    "email": "autaut03@googlemail.com"
+                }
+            ],
+            "description": "Facebook (facebook.com) OAuth2 Provider for Laravel Socialite",
+            "support": {
+                "source": "https://github.com/SocialiteProviders/Facebook/tree/4.1.0"
+            },
+            "time": "2020-12-01T23:10:59+00:00"
+        },
+        {
             "name": "socialiteproviders/google",
             "version": "4.1.0",
             "source": {
@@ -3248,6 +3289,47 @@
                 "source": "https://github.com/SocialiteProviders/Manager/tree/4.0.1"
             },
             "time": "2020-12-01T23:09:06+00:00"
+        },
+        {
+            "name": "socialiteproviders/microsoft",
+            "version": "4.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/Microsoft.git",
+                "reference": "2892499be9339c76853fd7e077e28f5f04120523"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/Microsoft/zipball/2892499be9339c76853fd7e077e28f5f04120523",
+                "reference": "2892499be9339c76853fd7e077e28f5f04120523",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.2 || ^8.0",
+                "socialiteproviders/manager": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\Microsoft\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Faust",
+                    "email": "hello@brianfaust.de"
+                }
+            ],
+            "description": "Microsoft OAuth2 Provider for Laravel Socialite",
+            "support": {
+                "source": "https://github.com/SocialiteProviders/Microsoft/tree/4.1.1"
+            },
+            "time": "2021-03-16T01:16:00+00:00"
         },
         {
             "name": "socialiteproviders/microsoft-azure",
