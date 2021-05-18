@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Microsoft\Graph\Graph;
+use Microsoft\Graph\Model;
 
 class SocialiteAccountController extends Controller
 {
@@ -20,20 +22,13 @@ class SocialiteAccountController extends Controller
 
     public function handleAuthRedirect($provider)
     {
-        if ($provider == "microsoft")
-        {
-            return Socialite::driver('microsoft')
-                ->scopes(['user.read', 'profile'])
-                ->redirect();
-        }
-        else
-        {
-            return Socialite::driver($provider)->redirect();
-        }
+        return Socialite::driver($provider)->redirect();
     }
 
-    public function handleAuthCallback($provider)
-    {
+
+    public function handleAuthCallback($provider, Request $request)
+    {   
+
         try{
             $user = Socialite::driver($provider)->user();
             $findSC = SocialiteAccount::where('socialite_id', $user->id)->first();
@@ -58,12 +53,17 @@ class SocialiteAccountController extends Controller
                 return redirect()->intended('dashboard');
             }
             else
-            {
+            {   
                 $finduser = User::where('email', $user->email)->first();
+                if ($user->avatar == null)
+                {
+                    $user->avatar = "https://www.pngarts.com/files/10/Default-Profile-Picture-Download-PNG-Image.png";
+                }
                 return view("auth.input-username", ['provider' => $provider], ['user' => $user]);
             }
             
         }catch(\Exeption $e){}
+        
     }
 
     public function createSocialiteUser(Request $user)

@@ -88,6 +88,6 @@ class User extends Authenticatable
      */
     protected function defaultProfilePhotoUrl()
     {
-        return 'https://i.stack.imgur.com/l60Hf.png';
+        return 'https://www.pngarts.com/files/10/Default-Profile-Picture-Download-PNG-Image.png';
     }
 }

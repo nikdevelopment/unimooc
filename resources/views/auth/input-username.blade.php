@@ -18,8 +18,8 @@
                             <div class="flex h-14 w-full justify-center items-center text-3xl text-oren font-tulisan ">COMPLETE YOUR REGISTRATION</div>
                         </div>
                         <div class="flex justify-center items-center ">
-                            <div class="flex mt-10  w-32 h-32 mb-10">
-                                <img class="rounded-full" src="{{ $user->avatar }}" alt="">
+                            <div class="flex mt-10  w-32 h-32 mb-10 bg-contain">
+                                <img class="rounded-full bg-contain" src="{{ $user->avatar }}" alt="">
                             </div>
                         </div>
                         <div class="flex px-4 w-full mt-2 items-center justify-center">
